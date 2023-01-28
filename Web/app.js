@@ -4,20 +4,21 @@ let person = {
     classes: []
 };
 
-function getData(form)
+function exportData(formArrayData)
 {
   var formData = new FormData(form);
-
-  for (var pair of formData.entries()) {
-    console.log(pair[0] + ": " + pair[1]);
+  
+  for (var i of formArrayData) {
+    console.log(i + ' ');
   }
 
   //console.log(Object.fromEntries(formData));
 }
+function submitCall()
+{
+    ar = Array.form(document.querySelectorAll("#registrationForm input"));
+    exportData(ar);
+}
 
 
-document.getElementById("myForm").addEventListener("submit", 
-function (e) {
-e.preventDefault();
-getData(e.target);
-});
+document.addEventListener("submit", submitCall());
