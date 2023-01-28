@@ -1,9 +1,6 @@
-from __future__ import print_function
 import os
-
 import google.auth
 from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -32,4 +29,5 @@ def insert_row(spreadsheet_id, range_name, value_input_option,
     body = {'range': range_name, 'values': values}
 
     result = service.spreadsheets().values().append(spreadsheetId=spreadsheet_id, range=range_name, valueInputOption='RAW', body=body).execute()
+
     

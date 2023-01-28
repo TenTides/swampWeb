@@ -9,13 +9,22 @@ def home():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    discord_id = request.form['discord-name']
+    host = request.form["host"]
+    discordTag = request.form['discord-name']
+    classes = "CAP4611, COP5030, PSY2000"
+    array = []
+    array.append(discordTag)
+    array.append(classes)
+    array.append(host)
+    
+    
     insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10", "USER_ENTERED",
                   [
-                      [discord_id]
+                      array
                   ]
                  )
     return 'Data submitted'
 
 if __name__ == '__main__':
     app.run(debug=True)
+  
