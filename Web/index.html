@@ -8,8 +8,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Register for a Study Group or Host a Study Group</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="app.js" defer></script>
+        <!-- Title of our website -->
+        <title>SwampWeb</title>
     </head>
     <body>
-        <script src="" async defer></script>
+        <!-- NavBar -->
+        <div class="navbar">
+            <div class="container flex">
+                <h1 class="logo">SwampWeb</h1>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- ShowCase -->
+        <section class="showcase">
+            <div class="container grid">
+                <div class="showcase-text">
+                    <h1>Find Your Team</h1>
+                    <p>Connect with like minded students at UCF! Answer a couple of questions and you'll be put with a team right for you. Start studying with a team now!</p>
+                </div>
+                <div class="showcase-form card">
+                    <h2>Join a Team!</h2>
+                    <form>
+                        <div class="form-control">
+                            <input type="text" name="discord-name" placeholder="Discord Name" required>
+                        </div>
+                        <div class="form-control">
+                            <p>Would you like to Host a team?
+                                <br />
+                                <input type="radio" name="host" value="Yes" checked="checked"> Yes
+                                <input type="radio" name="host" value="No" checked="checked"> No
+                            </p>
+                        </div>
+                        <!-- These Are forms that can be updated later -->
+                        <!-- <div class="form-control">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div> -->
+                        <input type="submit" value="send" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+
+        </section>
+        
     </body>
 </html>
