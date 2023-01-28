@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-// const spawner = require['child_process'].spawn;
-=======
 // import{python} from 'python-shell'
->>>>>>> Stashed changes
 var form = document.getElementById("registrationForm");
 
 // let person = {
@@ -58,14 +54,9 @@ form.addEventListener('submit', function(event) {
     console.log(document.getElementById("host-no").value)
     data.push(hostNo);
   }
-<<<<<<< Updated upstream
-
-  pythonArrayExport(['johndoe#111','Yes']);
-=======
   
   console.log(data);
   sendData(discordTag);
->>>>>>> Stashed changes
 })
 
 // function pythonArrayExport(data)
@@ -73,12 +64,10 @@ form.addEventListener('submit', function(event) {
 //   const python_process = spawner('python',['./sheetManager.py', JSON.stringify(data)])
 // }
 
-<<<<<<< Updated upstream
 
 // python_process.stdout.on('data', (data) => {
 //   console.log['Data recieved from python script:', JSON.parse(data.toString())];
 // })
-=======
 // PythonShell.sh(
 //   sheetManager.py,
 //   null,
@@ -87,4 +76,3 @@ form.addEventListener('submit', function(event) {
 //     console.log('finish');
 //   }
 // )
->>>>>>> Stashed changes
