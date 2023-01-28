@@ -5,9 +5,7 @@ let person = {
 };
 
 function exportData(formArrayData)
-{
-  var formData = new FormData(form);
-  
+{  
   for (var i of formArrayData) {
     console.log(i + ' ');
   }
@@ -16,9 +14,8 @@ function exportData(formArrayData)
 }
 function submitCall()
 {
-    ar = Array.form(document.querySelectorAll("#registrationForm input"));
+    ar = document.querySelectorAll("#registrationForm input");
     exportData(ar);
 }
-
 
 document.addEventListener("submit", submitCall());
