@@ -1,27 +1,29 @@
-let form = document.getElementById("registrationForm");
+var form = document.getElementById("registrationForm");
 
-let person = {
-    discordTag: "",
-    host: false,
-    classes: []
-};
+// let person = {
+//     discordTag: "",
+//     host: false,
+//     classes: []
+// };
 
-function exportData(formArrayData)
-{  
-  for (var i of formArrayData) {
-    console.log(i + ' ');
-  }
+// function exportData(formArrayData)
+// {  
+//   for (var i of formArrayData) {
+//     console.log(i + ' ');
+//   }
 
-  //console.log(Object.fromEntries(formData));
-}
+//   //console.log(Object.fromEntries(formData));
+// }
 
 form.addEventListener('submit', function(event) {
   event.preventDefault() // prevents the form from autosubmitting
-  let discordTag = document.getElementsByName("discord-name").value;
-  let host = document.getElementsByName("host").value;
+  var discordTag = document.getElementById("discord-name").value;
+  console.log(discordTag);
+  var host = document.getElementById("host").value;
+  console.log(host);
 
-  data = [];
-  data.push(discordTag);
-  data.push(host)
-  exportData(data);
+  // data = [];
+  // data.push(discordTag);
+  // data.push(host)
+  // exportData(data);
 })
