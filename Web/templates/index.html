@@ -7,7 +7,7 @@
         <!--meta name="description" content=""-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Register for a Study Group or Host a Study Group</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="static/styles.css">
         <script src="app.js" defer></script>
         <!-- Title of our website -->
         <title>StudyBuddy@UCF</title>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="showcase-form card">
                     <h2>Join a Team!</h2>
-                    <form id ="registrationForm">
+                    <form action="/submit" method="POST">
                         <div class="form-control">
                             <input type="text" id="discord-name" name="discord-name" placeholder="JohnDoe#1111" required>
                         </div>
