@@ -1,3 +1,4 @@
+import{python} from 'python-shell'
 var form = document.getElementById("registrationForm");
 
 // let person = {
@@ -33,11 +34,20 @@ form.addEventListener('submit', function(event) {
     data.push(hostNo);
   }
  
-  pythonArrayExport(data);
+  postData(data);
 })
 
-function pythonArrayExport(data)
-{
-  const spawner = require['child_process'].spawner
-  const python_process = spawner('python',['./sheetManager.py',JSON.stringify(data)])
-}
+// function pythonArrayExport(data)
+// {
+//   const spawner = require['child_process'].spawner
+//   const python_process = spawner('python',['./sheetManager.py',JSON.stringify(data)])
+// }
+
+PythonShell.sh(
+  sheetManager.py,
+  null,
+  function (err) {
+    if (err) throw err;
+    console.log('finish');
+  }
+)
