@@ -1,4 +1,4 @@
-
+let form = document.getElementById("registrationForm");
 
 let person = {
     discordTag: "",
