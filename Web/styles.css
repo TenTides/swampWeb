@@ -4,7 +4,7 @@
 
 /* We are reset the values of all elements since the browser likes to set values to these things for certain elements*/
 :root {
-    --primary-color: #219EBC;
+    --primary-color: #023047;
 }
 * {
     box-sizing: border-box;
@@ -48,7 +48,7 @@ img {
 /* Nav Bar styling */
 .navbar {
     background-color: var(--primary-color);
-    color: #fff;
+    color: #FFB703;
     height: 70px;
 }
 
