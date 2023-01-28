@@ -14,8 +14,12 @@ function exportData(formArrayData)
 }
 function submitCall()
 {
-    ar = document.querySelectorAll("#registrationForm input");
-    exportData(ar);
+    discordTag = document.getElementsByName("discord-name");
+    host = document.getElementsByName("host");
+    data = [];
+    data.push(discordTag);
+    data.push(host)
+    exportData(data);
 }
 
 document.addEventListener("submit", submitCall());
