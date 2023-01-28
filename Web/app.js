@@ -19,8 +19,15 @@ form.addEventListener('submit', function(event) {
   event.preventDefault() // prevents the form from autosubmitting
   var discordTag = document.getElementById("discord-name").value;
   console.log(discordTag);
-  var host = document.getElementById("host").value;
-  console.log(host);
+
+  // we see which of the two is checked and print its value 
+  var hostYes = document.getElementById("host-yes").checked;
+  var hostNo = document.getElementById("host-no").checked;
+  if (hostYes == true){
+    console.log(document.getElementById("host-yes").value);
+  } else  {
+    console.log(document.getElementById("host-no").value)
+  }
 
   // data = [];
   // data.push(discordTag);
