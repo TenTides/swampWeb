@@ -1,4 +1,4 @@
-import{python} from 'python-shell'
+// const spawner = require['child_process'].spawn;
 var form = document.getElementById("registrationForm");
 
 // let person = {
@@ -33,21 +33,16 @@ form.addEventListener('submit', function(event) {
     console.log(document.getElementById("host-no").value)
     data.push(hostNo);
   }
- 
-  postData(data);
+
+  pythonArrayExport(['johndoe#111','Yes']);
 })
 
 // function pythonArrayExport(data)
 // {
-//   const spawner = require['child_process'].spawner
-//   const python_process = spawner('python',['./sheetManager.py',JSON.stringify(data)])
+//   const python_process = spawner('python',['./sheetManager.py', JSON.stringify(data)])
 // }
 
-PythonShell.sh(
-  sheetManager.py,
-  null,
-  function (err) {
-    if (err) throw err;
-    console.log('finish');
-  }
-)
+
+// python_process.stdout.on('data', (data) => {
+//   console.log['Data recieved from python script:', JSON.parse(data.toString())];
+// })
