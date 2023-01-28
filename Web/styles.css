@@ -1,0 +1,132 @@
+/* Note this was taken from Google Fonts and saving the Styles.css Portion of code */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+/* Note You should Always Have this */
+
+/* We are reset the values of all elements since the browser likes to set values to these things for certain elements*/
+:root {
+    --primary-color: #219EBC;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    /*This removes bullet points from all lists*/
+    list-style-type: none; 
+}
+
+a {
+    /* removes underlines from links */
+    text-decoration: none;
+    /* changes the color of all links which is usually purple */
+    color: #333;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* This ensures that all imgs with in a container will take up the entirety of it contents. We usually want this to be the case so we are setting this for all imgs.*/
+img {
+    width: 100%;
+}
+/* ==================================================== */
+/* Nav Bar styling */
+.navbar {
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px white solid;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+/* Showcase */
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color:white;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+    overflow: visible;
+}
+
+.showcase-form {
+    position: relative;
+    top:60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+}
+/* Utilities */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #333;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
