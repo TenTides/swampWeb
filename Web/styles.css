@@ -63,7 +63,7 @@ img {
 }
 
 .navbar a:hover {
-    border-bottom: 2px white solid;
+    border-bottom: 2px #FFB703 solid;
 }
 
 .navbar .flex {
