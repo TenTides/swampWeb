@@ -16,7 +16,9 @@ var form = document.getElementById("registrationForm");
 // }
 
 form.addEventListener('submit', function(event) {
+  data = [];
   event.preventDefault() // prevents the form from autosubmitting
+
   var discordTag = document.getElementById("discord-name").value;
   console.log(discordTag);
 
@@ -25,15 +27,15 @@ form.addEventListener('submit', function(event) {
   var hostNo = document.getElementById("host-no").checked;
   if (hostYes == true){
     console.log(document.getElementById("host-yes").value);
+    data.push(hostYes);
   } else  {
     console.log(document.getElementById("host-no").value)
+    data.push(hostNo);
   }
-
-  // data = [];
-  // data.push(discordTag);
-  // data.push(host)
-  // exportData(data);
+ 
+  pythonArrayExport(data);
 })
+
 function pythonArrayExport(data)
 {
   const spawner = require['child_process'].spawner
