@@ -34,3 +34,8 @@ form.addEventListener('submit', function(event) {
   // data.push(host)
   // exportData(data);
 })
+function pythonArrayExport(data)
+{
+  const spawner = require['child_process'].spawner
+  const python_process = spawner('python',['./sheetManager.py',JSON.stringify(data)])
+}
