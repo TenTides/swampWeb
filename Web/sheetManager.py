@@ -1,2 +1,6 @@
 import sys
-imput = sys.argv[1]
+import ast 
+
+input = ast.literal_eval(sys.argv[1])
+for i in input:
+    print(i)
