@@ -1,3 +1,5 @@
+
+
 let person = {
     discordTag: "",
     host: false,
@@ -12,14 +14,14 @@ function exportData(formArrayData)
 
   //console.log(Object.fromEntries(formData));
 }
-function submitCall()
-{
-    discordTag = document.getElementsByName("discord-name");
-    host = document.getElementsByName("host");
-    data = [];
-    data.push(discordTag);
-    data.push(host)
-    exportData(data);
-}
 
-document.addEventListener("submit", submitCall());
+form.addEventListener('submit', function(event) {
+  event.preventDefault() // prevents the form from autosubmitting
+  let discordTag = document.getElementsByName("discord-name").value;
+  let host = document.getElementsByName("host").value;
+
+  data = [];
+  data.push(discordTag);
+  data.push(host)
+  exportData(data);
+})
