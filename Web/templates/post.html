@@ -1,32 +1,124 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Data Transfer Successful!</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="postStyles.css">
+        <!--meta name="description" content=""-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register for a Study Group or Host a Study Group</title>
+        <link rel="stylesheet" href="static/postStyles.css">
+        <script src="#"  defer></script>
+        <!-- Title of our website -->
+        <title>StudyBuddy@UCF</title>
+        <style>
+            /* ==================================================== */
+            /* Loader Styling */
+            .loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #22333b;
+                transition: opacity 0.75s, visibility 0.75s;
+                z-index: 102;
+            }
+
+            .loader--hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .loader::after {
+                content: "";
+                width: 75px;
+                height: 75px;
+                border: 10px solid #dddddd;
+                border-top-color: #FFB703;
+                border-radius: 50%;
+                animation: loading 0.75s ease infinite;
+            }
+
+            @keyframes loading {
+                from {transform: rotate(0turn)}
+                to {transform: rotate(1turn)}
+            }
+        </style>
+        <script>
+
+
+            window.addEventListener("load", () => {
+                document.querySelector(".loader").classList.add("loader--hidden");
+            })
+            
+
+        </script>
     </head>
     <body>
-        <div class = "background-image"></div>
-        <div class="centerText">
-            <h1>Data Sucessfully Submitted!</h1>
-            <p>Check your discord for further info</p>
+        <div class="loader"></div>
+        <a name="home"></a>
+        <div class="progress-bar">
+            <div class="filled" id="myBar"></div>
         </div>
-        <script src="" async defer></script>
+        <!-- NavBar -->
+        <div class="navbar">
+            <div class="container flex">
+                <!-- <h1 class="image-logo">
+                    <img src="./StudyBudLogo.png" class="img" >
+                </h1> -->
+                <h1 class="logo">StudyBuddy@UCF</h1>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./index.html">About</a></li>
+                        <li><a href="./index.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+       
+
+        <!-- Thank You Showcase -->
+        <section class="showcase">
+            <div class="container grid">
+                <div class="showcase-text grid" >
+                    <h1>Thank You For Submitting!</h1>
+                    <p>Join our discord server, StudyBuddy@UCf to get notified who's in your group!</p>
+                </div>
+
+                <div class="showcase-form card">
+                    <div class="grid">
+                        <h2>Join our discord!</h2>
+                        <p><a href="https://discord.gg/7PxwZfjM">https://discord.gg/7PxwZfjM</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- 
+        <section class="AboutUs-section">
+            <a name="aboutus" ></a>
+            <div class="container grid">
+                <h1>About Us</h1>
+                <p>We're a group of Computer Science Undergraduates looking to help others find a study group made for success</p>
+
+            </div>
+        </section> -->
+
+        <!-- <section class="email-section">
+            <a name="contact"></a>
+            <div class="container grid">
+                <h1>Contact Us</h1>
+                <p>blahblahblahblahblahblahblahblahblah</p>
+                <p>blahblahblahblahblahblahblahvblahblahblah</p>
+                <p>blahblahblahblahblahblahblahvblahblahblah</p>
+            </div>
+            
+        </section> -->
+        
     </body>
-    <style>
-        .background-image
-        {
-            background-image: url("./blur-blurred-blurry-bokeh.jpg");
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-        }
-    </style>
 </html>
