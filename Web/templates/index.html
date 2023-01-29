@@ -8,13 +8,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Register for a Study Group or Host a Study Group</title>
         <link rel="stylesheet" href="static/styles.css">
-        <script type="text/javascript "src="/static/app.js"  defer></script>
+        <script src="static/app.js"  defer></script>
         <!-- Title of our website -->
         <title>StudyBuddy@UCF</title>
+        <style>
+            /* ==================================================== */
+            /* Loader Styling */
+            .loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #22333b;
+                transition: opacity 0.75s, visibility 0.75s;
+                z-index: 102;
+            }
+
+            .loader--hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .loader::after {
+                content: "";
+                width: 75px;
+                height: 75px;
+                border: 10px solid #dddddd;
+                border-top-color: #FFB703;
+                border-radius: 50%;
+                animation: loading 0.75s ease infinite;
+            }
+
+            @keyframes loading {
+                from {transform: rotate(0turn)}
+                to {transform: rotate(1turn)}
+            }
+        </style>
+        <script>
+
+
+            window.addEventListener("load", () => {
+                document.querySelector(".loader").classList.add("loader--hidden");
+            })
+            
+
+        </script>
     </head>
     <body>
+        <div class="loader"></div>
+        <a name="home"></a>
         <div class="progress-bar">
-            <div class="filled"></div>
+            <div class="filled" id="myBar"></div>
         </div>
         <!-- NavBar -->
         <div class="navbar">
@@ -25,9 +73,9 @@
                 <h1 class="logo">StudyBuddy@UCF</h1>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="index.html">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#aboutus">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -94,6 +142,7 @@
         </section>
 
         <section class="AboutUs-section">
+            <a name="aboutus" ></a>
             <div class="container grid">
                 <h1>About Us</h1>
                 <p>We're a group of Computer Science Undergraduates looking to help others find a study group made for success</p>
@@ -102,6 +151,7 @@
         </section>
 
         <section class="email-section">
+            <a name="contact"></a>
             <div class="container grid">
                 <h1>Contact Us</h1>
                 <p>blahblahblahblahblahblahblahblahblah</p>
