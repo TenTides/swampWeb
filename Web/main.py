@@ -38,7 +38,7 @@ def submit():
     
     group = compare(array2, comparison_df)
     
-    webhook_url = "https://discord.com/api/webhooks/1069200503130574920/35L77-2ca2Ry6gPhKAlbn1LuSOHhV2ogB_R6MWr_ilBM4jXLSBWSPVao4S-IBMgmTNhQ"
+    webhook_url = "https://discord.com/api/webhooks/1069265449122013194/Dj9qxkAXC4WqRiQ_b57EzHB7qRCjflqK4yiKYmSnIopS5-2aSd2VRGjIwYZbjFTApGho"
     
     if (len(group) == 2):
         message = "@" + group[0] + " and @" + group[1] + " seem like a good match! Thanks for using StudyBuddy!"

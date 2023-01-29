@@ -14,7 +14,7 @@ async def send_message(message, user_message, is_private):
         print(e)
 
 def run_discord_bot():
-    TOKEN = 'MTA2ODk5NTY4MDc0OTc2ODc2Nw.GFEp_L.qAdGeG8pRBKJMbhoyQxk0Axe8TZGWJlOyVRXBM'
+    TOKEN = 'MTA2ODk5NTY4MDc0OTc2ODc2Nw.GxRSIc.yWmJpBLctQgaPTzoAT-Rrs3isBXYQHCYbzN9Dk'
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
@@ -48,29 +48,5 @@ def run_discord_bot():
 
     client.run(TOKEN)
 
-# //////////
 
-# async def run():
-    # intents = discord.Intents(members=True)
-    # client=discord.Client(intents=intents)
-    # welcomechannel = await client.fetch_channel(1069011685869895730) 
 
-intents = discord.Intents.default()
-intents.members = True
-
-client = discord.Client(intents=intents)
-
-@client.event
-async def on_ready():
-    print('Bot is ready.')
-
-@client.event
-async def on_member_join(member):
-    await member.send('Welcome to the server!')
-
-@client.event
-async def on_member_leave(member):
-    await member.send('We are sad to see you go!')
-    
-TOKEN = 'MTA2ODk5NTY4MDc0OTc2ODc2Nw.GFEp_L.qAdGeG8pRBKJMbhoyQxk0Axe8TZGWJlOyVRXBM'
-client.run(TOKEN)
