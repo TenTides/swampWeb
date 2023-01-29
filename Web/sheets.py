@@ -1,13 +1,13 @@
 """these are imports duh"""
 import os
-#import google.auth
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 
-import pandas as pd
+from google.auth.transport.requests import Request # pylint: disable=import-error
+from google.oauth2.credentials import Credentials # pylint: disable=import-error
+from google_auth_oauthlib.flow import InstalledAppFlow # pylint: disable=import-error
+from googleapiclient.discovery import build # pylint: disable=import-errorw
+from googleapiclient.errors import HttpError # pylint: disable=import-error
+
+import pandas as pd # pylint: disable=import-error
 
 def insert_row(spreadsheet_id, range_name, _values):
     """this is a function to add a row"""          
@@ -30,7 +30,7 @@ def insert_row(spreadsheet_id, range_name, _values):
     body = {'range': range_name, 'values': values}
     
     try:
-        sheet = service.spreadsheets()# pylint: disable=maybe-no-member
+        sheet = service.spreadsheets() # pylint: disable=maybe-no-member
         sheet.values().append(spreadsheetId=spreadsheet_id, range=range_name, valueInputOption='RAW', body=body).execute()
     except HttpError as err:
         print(err)
