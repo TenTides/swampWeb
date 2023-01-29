@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from sheets import insert_row
+from sheets import insert_row, sheets_to_df
 
 app = Flask(__name__)
 
@@ -28,7 +28,10 @@ def submit():
             array.append(1)
     array2.extend(array)
 
+    comparison_df = sheets_to_df("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A1:M100000")
     insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10",[array2])
+    
+    print(comparison_df)
     return render_template('post.html')
 
 if __name__ == '__main__':
