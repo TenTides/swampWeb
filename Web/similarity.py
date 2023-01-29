@@ -44,11 +44,13 @@ def compare(user1_list, comparison_df):
     if (len(most_alike) == 0):
         return []
     
+    group.append(user1_id)
     group.append(most_alike[0])
+    
     group_size = min(user1_pref, pref_dict[most_alike[0]]);
     
     i = 1
-    while (len(group) < group_size or i < len(most_alike)):
+    while (len(group) < group_size and i < len(most_alike)):
         curr = most_alike[i]
         if (abs(pref_dict[curr] - group_size) <= 1):
             group.append(curr)

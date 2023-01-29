@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template # pylint: disable=import-error
-from sheets import insert_row, sheets_to_df
+from sheets import insert_row, del_row, sheets_to_df
 from similarity import compare
 
 app = Flask(__name__)
@@ -34,16 +34,21 @@ def submit():
     comparison_df = sheets_to_df("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A1:M100000")
     insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10",[array2])
     
+    full_df = sheets_to_df("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A1:M100000")
+    
     print(comparison_df)
     
     group = compare(array2, comparison_df)
-    
-    if (len(group) == 0):
-        return render_template('later.hmtl')
-    
-    bot_message(group)
+    # bot_message(group)
     
     print(group)
+    
+    for member in group:
+        # member_row = full_df.loc[full_df['discord_id']== member, full_df.index].iat[0]
+        # value = df.loc[df['B'] == 5, full_df.index].iat[0]
+        # member_row = full_df.loc[full_df['discord_id']== member].item()
+        print(member_row)
+        del_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "0", "userData!A2:C10", member_row, member_row + 1)
     
     return render_template('post.html')
 

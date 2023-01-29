@@ -73,8 +73,4 @@ def sheets_to_df(spreadsheet_id, range_names):
     except HttpError as err:
         print(err)
 
-    new_header = df.iloc[0]
-    df = df[1:]
-    df.columns = new_header 
     
-    return df
