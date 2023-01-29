@@ -69,6 +69,11 @@ img {
 .navbar .flex {
     justify-content: space-between;
 }
+
+.navbar .image-logo .img {
+    height: 100;
+    width: 100;;
+}
 /* Showcase */
 .showcase{
     height: 500px;
