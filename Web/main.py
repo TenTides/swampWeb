@@ -1,6 +1,9 @@
+import requests
 from flask import Flask, request, render_template # pylint: disable=import-error
 from sheets import insert_row, del_row, sheets_to_df
 from similarity import compare
+from discord.http import HTTPClient
+
 
 app = Flask(__name__)
 
@@ -30,7 +33,7 @@ def submit():
         else:
             array.append(1)
     array2.extend(array)
-
+    
     comparison_df = sheets_to_df("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A1:M100000")
     insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10",[array2])
     
@@ -39,15 +42,23 @@ def submit():
     print(comparison_df)
     
     group = compare(array2, comparison_df)
-    # bot_message(group)
     
-    print(group)
+    
+    webhook_url = "https://discord.com/api/webhooks/1069200503130574920/35L77-2ca2Ry6gPhKAlbn1LuSOHhV2ogB_R6MWr_ilBM4jXLSBWSPVao4S-IBMgmTNhQ"
+    
+    if (len(group) == 2):
+        message = "@" + group[0] + " and @" + group[1] + " seem like a good match! Thanks for using StudyBuddy!"
+    elif (len(group) == 3):
+        message = "@" + group[0] + ", @" + group[1] + ", and @" + group[2] +  " would make a perfect trio! Thanks for using StudyBuddy!"
+    elif (len(group) == 4):
+            message = "Catered just FOUR you: @" + group[0] + ", @" + group[1] + ", @" + group[2] + ", and @" + group[3] + ". Get it. Thanks for using StudyBuddy!"
+    
+    if (len(group) >= 2 and len(group) <= 4):
+        payload = {"content": message}
+        response = requests.post(webhook_url, json=payload)
     
     for member in group:
-        # member_row = full_df.loc[full_df['discord_id']== member, full_df.index].iat[0]
-        # value = df.loc[df['B'] == 5, full_df.index].iat[0]
-        # member_row = full_df.loc[full_df['discord_id']== member].item()
-        print(member_row)
+        member_row = int(full_df[full_df['discord_id'] == member].index[0])
         del_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "0", "userData!A2:C10", member_row, member_row + 1)
     
     return render_template('post.html')
