@@ -45,9 +45,9 @@ p {
 }
 
 /* This ensures that all imgs with in a container will take up the entirety of it contents. We usually want this to be the case so we are setting this for all imgs.*/
-img {
+/* img {
     width: 100%;
-}
+} */
 
 /* ==================================================== */
 /* Nav Bar styling */
@@ -135,6 +135,14 @@ img {
     margin: 10px;
 }
 
+input[type=submit] {
+    padding:5px 15px; 
+    background: #FFB703; 
+    border: 1px; none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
 
 /* About us Section */
 
