@@ -71,13 +71,18 @@ def sheets_to_df(spreadsheet_id, range_names):
         for row in values:
             new_df = pd.DataFrame([row])
             df = pd.concat([df, new_df], axis=0, ignore_index=False)
-
     except HttpError as err:
         print(err)
 
+    new_header = df.iloc[0]
+    df = df[1:]
+    df.columns = new_header 
+    
+    return df
 
-def sheets_to_df(spreadsheet_id, range_names):
-    """this is function to convert a google sheet to a pandas dataframe"""
+
+def del_row(spreadsheet_id, sheet_id, range_names, startIdx, endIdx):
+    """this is a function to remove a row"""          
     scopes = ['https://www.googleapis.com/auth/spreadsheets']
     creds = None
     if os.path.exists('token.json'):
@@ -91,33 +96,33 @@ def sheets_to_df(spreadsheet_id, range_names):
             creds = flow.run_local_server(port=0)
         with open('token.json', 'w',encoding="utf-8") as token:
             token.write(creds.to_json())
-            
+    
+    
     try:
         service = build('sheets', 'v4', credentials=creds)
 
         sheet = service.spreadsheets()
-        result = sheet.values().get(spreadsheetId=spreadsheet_id,
+        sheet.values().get(spreadsheetId=spreadsheet_id,
                                     range=range_names).execute()
-        values = result.get('values', [])
+        
+        request_body = {
+            'requests' : [
+                {       
+                    "deleteDimension": {
+                        "range" : {
+                        "sheetId": sheet_id,
+                        "dimension": "ROWS",
+                        "startIndex": startIdx,
+                        "endIndex": endIdx
+                        }
+                    }   
+                }
+            ]
+        }   
 
-        if not values:
-            print('No data found.')
-            return
-        
-        df = pd.DataFrame()
-        
-        for row in values:
-            new_df = pd.DataFrame([row])
-            df = pd.concat([df, new_df], axis=0, ignore_index=False)
-            # Print columns A and E, which correspond to indices 0 and 4.
-            # print('%s, %s, %s, %s, %s, %s, %s, %s, %s' % (row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]))
+
     except HttpError as err:
         print(err)
-
-    new_header = df.iloc[0]
-    df = df[1:]
-    df.columns = new_header 
     
-    return df
-        
-sheets_to_df("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A1:M100000")
+    sheet.batchUpdate(spreadsheetId=spreadsheet_id,
+                      body=request_body).execute()
