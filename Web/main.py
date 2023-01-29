@@ -29,7 +29,7 @@ def submit():
     array2.extend(array)
 
     insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10",[array2])
-    return 'Data submitted'
+    return render_template('post.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

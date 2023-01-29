@@ -29,7 +29,6 @@ def insert_row(spreadsheet_id, range_name, _values):
     try:
         sheet = service.spreadsheets()# pylint: disable=maybe-no-member
         sheet.values().append(spreadsheetId=spreadsheet_id, range=range_name, valueInputOption='RAW', body=body).execute()
-        
     except HttpError as err:
         print(err)
 
