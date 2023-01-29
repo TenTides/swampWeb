@@ -5,7 +5,7 @@ def compare(user1_list, comparison_df):
                "COP3503C","COP3330","COP3402","Foundation Exam",
                "COP4331C","COT3100","CIS3360"]
     
-    match = []
+    group = []
     pref_dict = {}
     num_classes = {}
     overlap = {}
@@ -30,10 +30,7 @@ def compare(user1_list, comparison_df):
         diff_classes = user1_num_classes + user2_num_classes - num_overlap
         similarity_score = float(num_overlap / diff_classes)
         
-        print(user2_id + " " + str(similarity_score) + " " + str(len(overlapping_classes)) + " " + str(abs(user1_pref - user2_pref)))
-        
         if (len(overlapping_classes) > 0 and abs(user1_pref - user2_pref) <= 1 and similarity_score >= .5):
-            print("adding: " + user2_id)
             pref_dict[user2_id] = user2_pref
             num_classes[user2_id] = user2_num_classes
             overlap[user2_id] = overlapping_classes
@@ -47,14 +44,14 @@ def compare(user1_list, comparison_df):
     if (len(most_alike) == 0):
         return []
     
-    match.append(most_alike[0])
+    group.append(most_alike[0])
     group_size = min(user1_pref, pref_dict[most_alike[0]]);
     
     i = 1
-    while (len(match) < group_size or i < len(most_alike)):
+    while (len(group) < group_size or i < len(most_alike)):
         curr = most_alike[i]
         if (abs(pref_dict[curr] - group_size) <= 1):
-            match.append(curr)
+            group.append(curr)
         i += 1
 
-    return match
+    return group

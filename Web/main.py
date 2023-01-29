@@ -36,9 +36,14 @@ def submit():
     
     print(comparison_df)
     
-    matches = compare(array2, comparison_df)
+    group = compare(array2, comparison_df)
     
-    print(matches)
+    if (len(group) == 0):
+        return render_template('later.hmtl')
+    
+    bot_message(group)
+    
+    print(group)
     
     return render_template('post.html')
 
