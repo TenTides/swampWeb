@@ -38,8 +38,12 @@
                     <h2>Join a Team!</h2>
                     <form action="/submit" method="POST">
                         <div class="form-control">
-                            <input type="text" id="discord-name" name="discord-name" placeholder="JohnDoe#1111" required>
+                            <p>Discord Name:
+                                <br />
+                                <input type="text" id="discord-name" name="discord-name" placeholder="JohnDoe#1111" required>
+                            </p>
                         </div>
+
                         <div class="form-control">
                             <p>Would you like to Host a team?
                                 <br />
@@ -47,16 +51,34 @@
                                 <input type="radio" id="host-no"name="host" value="No" checked="checked" > No
                             </p>
                         </div>
-                        <!-- These Are forms that can be updated later -->
-                        <!-- <div class="form-control">
-                            <input type="text" name="name" placeholder="Name" required>
-                        </div>
+                        
+                            <!--These are the Course input form -->
                         <div class="form-control">
-                            <input type="text" name="name" placeholder="Name" required>
+                            <p>Select what courses you're in!
+                                <br />
+                                <input type="checkbox" id="COP2500" name="courses" value="COP2500" > COP2500
+                                <br />
+                                <input type="checkbox" id="COP3223C" name="courses" value="COP3223C" > COP3223C
+                                <br />
+                                <input type="checkbox" id="CDA103" name="courses" value="CDA103" > CDA103
+                                <br />
+                                <input type="checkbox" id="COP3502C" name="courses" value="COP3502C" > COP3502C
+                                <br />
+                                <input type="checkbox" id="COP3503C" name="courses" value="COP3503C" > COP3503C
+                                <br />
+                                <input type="checkbox" id="COP3330" name="courses" value="COP3330" > COP3330
+                                <br />
+                                <input type="checkbox" id="COP3402" name="courses" value="COP3402" > COP3402
+                                <br />
+                                <input type="checkbox" id="Foundation Exam" name="courses" value="Foundation Exam" > Foundation Exam
+                                <br />
+                                <input type="checkbox" id="COP4331C" name="courses" value="COP4331C" > COP4331C
+                                <br />
+                                <input type="checkbox" id="COT3100" name="courses" value="COT3100" > COT3100
+                                <br />
+                                <input type="checkbox" id="CIS3360" name="courses" value="CIS3360" > CIS3360
+                            </p>
                         </div>
-                        <div class="form-control">
-                            <input type="text" name="name" placeholder="Name" required>
-                        </div> -->
                         <input type="submit" value="send" class="btn btn-primary">
                     </form>
                 </div>
