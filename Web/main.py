@@ -17,7 +17,6 @@ def submit():
     array.append(classes)
     array.append(host)
     
-    
     insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10", "USER_ENTERED",
                   [
                       array
