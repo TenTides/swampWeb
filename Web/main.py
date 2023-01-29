@@ -16,7 +16,7 @@ def submit():
     discord_tag = request.form['discord-name']
     classes = request.form.getlist("courses")
     array = []
-    array2 = [discord_tag,host]
+    array2 = [discord_tag, host]
     comp_array = ["COP2500","COP3223C","CDA3103","COP3502C","COP3503C","COP3330","COP3402","Foundation Exam","COP4331C","COT3100","CIS3360"]
 
     for i in range(len(comp_array)): 
