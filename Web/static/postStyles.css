@@ -1,0 +1,33 @@
+/* Note this was taken from Google Fonts and saving the Styles.css Portion of code */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+/* Note You should Always Have this */
+
+/* We are reset the values of all elements since the browser likes to set values to these things for certain elements*/
+:root {
+    --primary-color: #023047;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.centered {
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}

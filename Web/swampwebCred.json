@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "swampweb",
+  "private_key_id": "9c766b203ced2ffc7c0a0a46dfe2f2f406cd0c50",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCkKD+DUpMvX9V4\nKL52FNo9l5bGMc0Ui1BSipa7gzZ93uvx5eC6kC3VqV34NRmcV8RL4xxN+MpfsfDl\nS1i5Hip9U1YM5g2HufmLuAht/88z1yp4utX7geSFnp/QGbwYNpckoaRuEb+kddkS\nZg2LJAnzWfDWVTJkqrNKLyj7um3Df5b1he4L+svtz0kIXG4ZaOxeSQpaWaHxZCIX\nteBc/h0sLNR8X8kmPRQyfx5LDFu39IG5JGEZ+uCH5WWSMqRn+EIZ29rVLXdTGuWO\ng1LvOLNdHcdaFw8M5aZg+tMprnsT/H/fXQXJ5Z7Ngkp3cB5b+gUEq46gV1BWF5Rd\ntmkLRhEfAgMBAAECggEANfVc2ye7ZakUnAiYgmvcSL6ZOtCH3qbkYh1X6o74zGsI\nF10+f1SBHGgtkTazEmbvCRq/5QlQTCBLVLNtmHvH76YC9P5xmBmTY0+8xZt+WkXx\nmfmf+Kn7mchIM7kh0Luw9sODLwL6gW6TSa7t6LyR4MHBnlIm3FwXztytlgDzr3yr\n71AW+oVNmT/cAKPjzlh/jTorS3LDTlDfG0Ec6/o+dduUGL+x77yMiVj20htBMEOD\nq+jqBh6zjdoP5kjeBskqzj7V/q4uteXQxiFtxSw1VaFKzZYeAdydkydJjRDi2vX3\nloxTK1gmavbXfrHHWjrvRyOjT2I441xaYcRiALQNgQKBgQDauC6rvx0b7fiaQNz5\n69PMGgBb36Fei8+y61eyyf0kePKZ/SjgigS9Bqi3YHmNOlQhosO4VR+1NeaUZ10S\n8aBM4gaDXSXNSU+9Hj8so9e1xhxnRZbzANBVHGQCNBXHXyK2+R1GBXHVQLZ0zbvx\nINS3DgYh+HsgysmDe0qRjyxV/wKBgQDAIz5rICfpfIeLt1xqSbg7XW7q1GTao/er\nqQCOP2Az5195BoBv7O3HTsIH//adZIsaq1hvvQcqsh2lgJQPrAUuMiInzAWy4Pp+\nsQfB6sOeqg86BJC0QTI/zTHR1aXSlRBTIA178FXRvI3R14Mw9mIDPMwKlCmRzdbZ\n4o4FrQmE4QKBgF5PWvh9kOyxIShKXb56PLpeX9c9x5RADxAkQI18YWYvrNRPgCfJ\n+58SVv+zXtZR12MljuVV9zUpB8LoCw8XFzrvn0VXjexF91chyrXR9DqSMT8ql5sy\nt6Jreogks1tjn1Fse33s7Re6LrKQ38Bqmq5QIr7VKSqLpnbGW/IF3WU7AoGBAIv6\noUTmfm1qnk253ohJAQGvBlnrNzba8luLmq4Hmgz2aeYASJ5CXNExnca6Qm9Uist5\nPcraSlhev56N2FC6oGORfrTDvPsfUR/v1Zj/clkryEAah1nrjbJRyhP3tQGAPA5z\ncZ9z7vIIjsHsYtXPCoUVTAoA+3AQKJFArvuPnznBAoGBAKZE0jsBD5okRdPkC24m\nVNvrS/GxlRwPL6DCiPI7wBo1if1Z7TYeh8xX2YVeBzwroHm8j7bLyEV1zD2n1UFN\nuRcVUlf1muPPUus237zNLTl+sN044JxncZZ+VGfM4FBOBM7zajvWD4V/DtRraF95\ngdtO7zmQsGijN+f4He9XH3G1\n-----END PRIVATE KEY-----\n",
+  "client_email": "swampweb@swampweb.iam.gserviceaccount.com",
+  "client_id": "104790169519596391031",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/swampweb%40swampweb.iam.gserviceaccount.com"
+}
