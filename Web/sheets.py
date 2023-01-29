@@ -70,7 +70,7 @@ def sheets_to_df(spreadsheet_id, range_names):
         
         for row in values:
             new_df = pd.DataFrame([row])
-            df = pd.concat([df, new_df], axis=0, ignore_index=False)
+            df = pd.concat([df, new_df], axis=0, ignore_index=True)
     except HttpError as err:
         print(err)
 

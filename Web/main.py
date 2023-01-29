@@ -35,14 +35,8 @@ def submit():
     array2.extend(array)
     
     comparison_df = sheets_to_df("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A1:M100000")
-    insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10",[array2])
-    
-    full_df = sheets_to_df("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A1:M100000")
-    
-    print(comparison_df)
     
     group = compare(array2, comparison_df)
-    
     
     webhook_url = "https://discord.com/api/webhooks/1069200503130574920/35L77-2ca2Ry6gPhKAlbn1LuSOHhV2ogB_R6MWr_ilBM4jXLSBWSPVao4S-IBMgmTNhQ"
     
@@ -56,9 +50,12 @@ def submit():
     if (len(group) >= 2 and len(group) <= 4):
         payload = {"content": message}
         response = requests.post(webhook_url, json=payload)
-    
-    for member in group:
-        member_row = int(full_df[full_df['discord_id'] == member].index[0])
+    else:
+        insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10",[array2])
+        
+    for i in range(1, len(group)):
+        member = group[i]
+        member_row = comparison_df.index[comparison_df['discord_id'] == member].tolist()[0]
         del_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "0", "userData!A2:C10", member_row, member_row + 1)
     
     return render_template('post.html')
