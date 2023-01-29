@@ -11,17 +11,24 @@ def home():
 def submit():
     host = request.form["host"]
     discordTag = request.form['discord-name']
-    classes = "CAP4611, COP5030, PSY2000"
+    classes = request.form.getlist("courses")
     array = []
-    array.append(discordTag)
-    array.append(classes)
-    array.append(host)
-    
-    insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10", "USER_ENTERED",
-                  [
-                      array
-                  ]
-                 )
+    array2 = [discordTag,host]
+    compArray = ["COP2500","COP3223C","CDA3103","COP3502C","COP3503C","COP3330","COP3402","Foundation Exam","COP4331C","COT3100","CIS3360"]
+
+    for i in range(len(compArray)):
+        if(classes.count(compArray[i]) == 0):
+            classes.insert(i," ")
+    for i in range(len(compArray)-len(classes)):
+        classes.append(" ")
+    for i in classes:
+        if(i == " "):
+            array.append(0)
+        else:
+            array.append(1)
+    array2.extend(array)
+
+    insert_row("1u0ue3KHkM1Mz_Xtcv__DFzACAxiYTLMvFTphSNQ_Was", "userData!A2:C10",[array2])
     return 'Data submitted'
 
 if __name__ == '__main__':
