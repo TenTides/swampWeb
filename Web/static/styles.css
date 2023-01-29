@@ -71,7 +71,7 @@ img {
 }
 /* Showcase */
 .showcase{
-    height: 5z00px;
+    height: 500px;
     background-color: #333533;
     color:white;
     position: relative;
@@ -98,7 +98,7 @@ img {
 .showcase-form {
     position: relative;
     top:60px;
-    height: 350px;
+    height: 600px;
     width: 400px;
     padding: 40px;
     z-index: 100;
